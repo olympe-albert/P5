@@ -21,25 +21,26 @@
     </nav>
     <div class="main">
         <section>
-            <h2>Votre sélection</h2>
+            <h2>Votre panier</h2>
             <div class="selection">
                 
             </div>
-            <form>
-                <p>
-                    <label>Quelle objectif souhaitez-vous ?</label><br>
-                    <select>
-                        <option>35mm</option>
-                        <option>50mm</option>
-                        <option>65mm</option>
-                    </select>
-                </p>
-            </form>
         </section>
         <aside>
-            <h3>Votre panier</h3>
-            <div></div>
-            <button class="btn-custom"><a href="cart.html"><p>Finaliser</p></a></button>
+            <h3>Vos coordonnées</h3>
+            <form class="details">
+                <p>
+                    <label for="name">Votre nom</label><br>
+                    <input type="text" name="name" placeholder="Robert Durand" size="30" />
+                    <br>
+                    <label for="mail">Votre mail</label><br>
+                    <input type="email" name="mail" placeholder="robert.durand@mail.com" size="30" />
+                    <br>
+                    <label for="city">Votre ville</label><br>
+                    <input type="text" name="city" placeholder="Gif sur Yvette" size="30" />
+                </p>
+            </form>
+            <input class="btn-custom" type="submit" value="Envoyer" />
         </aside>
     </div>
     <footer>

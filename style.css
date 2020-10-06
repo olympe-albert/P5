@@ -374,3 +374,25 @@ footer p
 {
     min-height: 400px;
 }
+
+/** formulaires **/
+
+.details
+{
+    padding-left: 20px;
+}
+
+label
+{
+    font-family: "NewYork";
+    font-size: 1em;
+    color: black;
+}
+
+input
+{
+    height: 20px;
+    border: blueviolet 2px solid;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
