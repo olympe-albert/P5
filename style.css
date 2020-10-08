@@ -98,15 +98,20 @@ h2
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 900px;;
+    max-width: 1200px;
 }
 
-.cameras
+.product-block
+{
+    margin-top: 20px;
+}
+
+.product-image
 {
     border: transparent 3px solid;
 }
 
-.cameras:hover
+.product-image:hover
 {
     border: blueviolet 3px solid;
 }
@@ -118,10 +123,6 @@ h2
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-.products p
-{
     font-family: "NewYork";
     font-size: 0.9em;
     color: black;
@@ -293,12 +294,12 @@ footer p
         max-width: 900px;;
     }
 
-    .cameras
+    .product-image
     {
         border: transparent 3px solid;
     }
 
-    .cameras:hover
+    .product-image:hover
     {
         border: blueviolet 3px solid;
     }
@@ -312,7 +313,7 @@ footer p
         align-items: center;
     }
 
-    .products p
+    .product-label p
     {
         font-family: "NewYork";
         font-size: 0.9em;

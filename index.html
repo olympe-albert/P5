@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="js/index.js" defer></script>
     <title>Orinoco • le e-commerce nouvelle génération</title>
 </head>
 <body>
@@ -23,57 +24,38 @@
         <section>
             <h2>Nos produits</h2>
             <div class="products">
-                <div>
-                    <img class="cameras" src="images/cam_1-square.jpg" alt="camera 1">
-                    <div class="product-label">
-                        <p>Zeiss P210 - 49,99€</p>
-                        <div><img src="images/ico_addtocart.png" alt="add to cart"></div>
-                    </div>
+                <div class="product-block" id="product1">
+                    <div class="product-image"><img src="images/cam_1-square.jpg" alt="camera"></div>
+                    <div class="product-label" id="label1"></div>
+                    <div class="product-label" id="price1"></div>
+                    <div class="product-label" id="description1"></div>
                 </div>
-                <div>
-                    <img class="cameras" src="images/cam_2-square.jpg" alt="camera 2">
-                    <div class="product-label">
-                        <p>Konica R33 - 29,99€</p>
-                        <div><img src="images/ico_addtocart.png" alt="add to cart"></div>
-                    </div>
+                <div class="product-block" id="product2">
+                    <div class="product-image"><img src="images/cam_2-square.jpg" alt="camera"></div>
+                    <div class="product-label" id="label2"></div>
+                    <div class="product-label" id="price2"></div>
+                    <div class="product-label" id="description2"></div>
                 </div>
-                <div>
-                    <img class="cameras" src="images/cam_3-square.jpg" alt="camera 3">
-                    <div class="product-label">
-                        <p>Kodak F70 - 64,99€</p>
-                        <div><img src="images/ico_addtocart.png" alt="add to cart"></div>
-                    </div>
+                <div class="product-block" id="product3">
+                    <div class="product-image"><img src="images/cam_3-square.jpg" alt="camera"></div>
+                    <div class="product-label" id="label3"></div>
+                    <div class="product-label" id="price3"></div>
+                    <div class="product-label" id="description3"></div>
                 </div>
-                <div>
-                    <img class="cameras" src="images/cam_4-square.jpg" alt="camera 4">
-                    <div class="product-label">
-                        <p>Konica XG9 - 44,99€</p>
-                        <div><img src="images/ico_addtocart.png" alt="add to cart"></div>
-                    </div>
+                <div class="product-block" id="product4">
+                    <div class="product-image"><img src="images/cam_4-square.jpg" alt="camera"></div>
+                    <div class="product-label" id="label4"></div>
+                    <div class="product-label" id="price4"></div>
+                    <div class="product-label" id="description4"></div>
                 </div>
-                <div>
-                    <img class="cameras" src="images/cam_5-square.jpg" alt="camera 5">
-                    <div class="product-label">
-                        <p>Samsung 340D - 88€</p>
-                        <div><img src="images/ico_addtocart.png" alt="add to cart"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="supp-product"></div>
-                </div>
-                <div>
-                    <div class="supp-product"></div>
-                </div>
-                <div>
-                    <div class="supp-product"></div>
+                <div class="product-block" id="product5">
+                    <div class="product-image"><img src="images/cam_5-square.jpg" alt="camera"></div>
+                    <div class="product-label" id="label5"></div>
+                    <div class="product-label" id="price5"></div>
+                    <div class="product-label" id="description5"></div>
                 </div>
             </div>
         </section>
-        <aside>
-            <h3>Votre sélection</h3>
-            <div></div>
-            <button class="btn-custom"><a href="product.html"><p>Personnaliser</p></a></button>
-        </aside>
     </div>
     <footer>
         <p>Mentions légales</p>
