@@ -7,6 +7,8 @@ request1.onreadystatechange = function()
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
     {
         let response = JSON.parse(this.responseText);
+        let link1 = document.getElementById("link1");
+        link1.setAttribute("href", "product.html?id=" + response._id)
         let label1 = document.getElementById("label1");
         label1.innerHTML = "Modèle : " + response.name;
         let price1 = document.getElementById("price1");
@@ -25,6 +27,8 @@ request2.onreadystatechange = function()
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
     {
         let response = JSON.parse(this.responseText);
+        let link2 = document.getElementById("link2");
+        link2.setAttribute("href", "product.html?id=" + response._id)
         let label2 = document.getElementById("label2");
         label2.innerHTML = "Modèle : " + response.name;
         let price2 = document.getElementById("price2");
@@ -43,6 +47,8 @@ request3.onreadystatechange = function()
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
     {
         let response = JSON.parse(this.responseText);
+        let link3 = document.getElementById("link3");
+        link3.setAttribute("href", "product.html?id=" + response._id)
         let label3 = document.getElementById("label3");
         label3.innerHTML = "Modèle : " + response.name;
         let price3 = document.getElementById("price3");
@@ -61,6 +67,8 @@ request4.onreadystatechange = function()
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
     {
         let response = JSON.parse(this.responseText);
+        let link4 = document.getElementById("link4");
+        link4.setAttribute("href", "product.html?id=" + response._id)
         let label4 = document.getElementById("label4");
         label4.innerHTML = "Modèle : " + response.name;
         let price4 = document.getElementById("price4");
@@ -79,6 +87,8 @@ request5.onreadystatechange = function()
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
     {
         let response = JSON.parse(this.responseText);
+        let link5 = document.getElementById("link5");
+        link5.setAttribute("href", "product.html?id=" + response._id)
         let label5 = document.getElementById("label5");
         label5.innerHTML = "Modèle : " + response.name;
         let price5 = document.getElementById("price5");
