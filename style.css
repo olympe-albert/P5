@@ -94,10 +94,8 @@ h2
 .products
 {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-around;
     max-width: 1200px;
 }
 
@@ -109,6 +107,7 @@ h2
 .product-image
 {
     border: transparent 3px solid;
+    max-width: 350px;
 }
 
 .product-image:hover
@@ -119,13 +118,14 @@ h2
 .product-label
 {
     width: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     font-family: "NewYork";
     font-size: 0.9em;
     color: black;
+}
+
+.product-image-api img
+{
+    width: 350px;
 }
 
 .supp-product
@@ -172,7 +172,7 @@ h3
     color: white;
     position: absolute;
     top: -8px;
-    left: 75px;
+    left: 62px;
 }
 
 /** footer **/
