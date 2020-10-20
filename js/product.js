@@ -17,11 +17,11 @@ requestProduct.onreadystatechange = function()
         let image = document.getElementById("image");
         image.innerHTML = "<img src=" + response.imageUrl + ">";
         let label = document.getElementById("label");
-        label.innerHTML = "Modèle : " + response.name;
+        label.innerHTML = "<p>Modèle : " + response.name + "</p>";
         let price = document.getElementById("price");
-        price.innerHTML = response.price +"€";
+        price.innerHTML = "<p>" + response.price +"€</p>";
         let description = document.getElementById("description");
-        description.innerHTML = response.description;
+        description.innerHTML = "<p>" + response.description + "</p>";
         let custom = document.getElementById("custom");
         let options = response.lenses;
         for(let i = 0; i < options.length; i++)
@@ -35,4 +35,30 @@ requestProduct.open("GET", "http://localhost:3000/api/cameras/" + selectedId);
 requestProduct.send();
 
 // ajouter un produit au panier avec localStorage
+function addProduct()
+{
+    let product = selectedId;
+    let cartContent = [];
+    if(JSON.parse(localStorage.getItem("cartContent")) === null)
+    {
+        cartContent = [];
+    }
+    else
+    {
+        cartContent = JSON.parse(localStorage.getItem("cartContent"));
+    };
+    cartContent.push(product);
+    localStorage.setItem("cartContent", JSON.stringify(cartContent));
+};
+
+let addToCart = document.getElementById("addtocart");
+addToCart.addEventListener("click", function(x)
+{
+    addProduct();
+    x.preventDefault();
+    x.stopPropagation();
+});
+
+let cartContent = localStorage.getItem("cartContent");
+console.log(cartContent);
 
