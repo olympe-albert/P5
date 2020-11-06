@@ -28,17 +28,20 @@
             <h3>Vos coordonnées</h3>
             <form class="details">
                 <p>
-                    <label for="name">Votre nom</label><br>
-                    <input type="text" name="name" placeholder="Robert Durand" size="30" />
-                    <br>
-                    <label for="mail">Votre mail</label><br>
-                    <input type="email" name="mail" placeholder="robert.durand@mail.com" size="30" />
-                    <br>
+                    <label for="firstname">Votre prénom</label><br>
+                    <input type="text" name="firstname" placeholder="Robert" size="30" id="firstname" required/><br>
+                    <label for="lastname">Votre nom</label><br>
+                    <input type="text" name="lastname" placeholder="Durand" size="30" id="lastname" required/><br>
+                    <label for="address">Votre adresse</label><br>
+                    <input type="text" name="address" placeholder="2 rue du Fort" size="30" id="address" required/><br>
                     <label for="city">Votre ville</label><br>
-                    <input type="text" name="city" placeholder="Gif sur Yvette" size="30" />
+                    <input type="text" name="city" placeholder="Laval" size="30" id="city" required/><br>
+                    <label for="mail">Votre mail</label><br>
+                    <input type="email" name="mail" placeholder="robert.durand@mail.com" size="30" id="mail" required/><br>
                 </p>
             </form>
-            <input class="btn-custom" type="submit" value="Envoyer" />
+            <div><p id="alert">Veuillez remplir le formulaire</p></div>
+            <input class="btn-custom" type="submit" value="Envoyer" id="send" />
         </aside>
     </div>
     <footer>
