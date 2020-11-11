@@ -5,8 +5,10 @@ let request1 = new XMLHttpRequest();
 request1.onreadystatechange = function() 
     {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
+    console.log("Requête GET ok");
     {
         let response = JSON.parse(this.responseText);
+        console.log("Réponse JSON récupérée vers JS : " + response);
 
         for (let index = 0; index < response.length; index++) 
         {
@@ -32,7 +34,7 @@ request1.onreadystatechange = function()
             productBlock.appendChild(descriptionCamera);
             descriptionCamera.className = "product-label";
             descriptionCamera.innerHTML = response[index].description;
-
+            console.log("Blocs produit créés");
         }
 
         // response.forEach(camera => {

@@ -91,6 +91,13 @@ h2
     color: black;
 }
 
+p
+{
+    font-family: "NewYork";
+    font-size: 1em;
+    color: black;
+}
+
 .products
 {
     display: flex;

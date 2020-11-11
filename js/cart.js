@@ -104,6 +104,7 @@ function validateForm()
     {
         let alert = document.getElementById("alert");
         alert.innerHTML = "Veuillez remplir tous les champs.";
+        alert.style.color = "#FF0000";
         console.log("Missing value here");
         return false;
     }
@@ -112,6 +113,7 @@ function validateForm()
     {
         let alert = document.getElementById("alert");
         alert.innerHTML = "Veuillez remplir les champs correctement.";
+        alert.style.color = "#FF0000";
         console.log("Wrong value here");
         return false;
     }
@@ -163,14 +165,17 @@ sendInput.addEventListener('click', function(e)
     // ... validation du formulaire
     validateForm(); 
     e.preventDefault();
-    // ... création d'un objet contact et POST à l'API
+    // ... création d'un objet contact - POST à l'API - redirection page de commande
     if(validateForm()==true)
     {
     console.log("Formulaire validé");
     contact = createContact();
     console.log("Contact créé");
     sendAndReceiveData(contact, products);
-    window.location = "./order.html"
+    setTimeout (function()
+    {
+        window.location = "./order.html"
+    }, 500)
     }
     else
     {
