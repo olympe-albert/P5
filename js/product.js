@@ -8,33 +8,29 @@ function getId()
 const selectedId = getId();
 console.log("Id produit récupéré : " + selectedId);
 
-// ajouter le produit sélectionné au html
-let requestProduct = new XMLHttpRequest();
-requestProduct.onreadystatechange = function() 
-    {
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
-    {
+// ajouter le produit sélectionné au html avec requête à l'API
+fetch("http://localhost:3000/api/cameras/" + selectedId)
+.then(response => {
+    response.json().then(data => {
         console.log("Requête infos produit ok");
-        let response = JSON.parse(this.responseText);
         let image = document.getElementById("image");
-        image.innerHTML = "<img src=" + response.imageUrl + ">";
+        image.innerHTML = "<img src=" + data.imageUrl + ">";
         let label = document.getElementById("label");
-        label.innerHTML = "<p>Modèle : " + response.name + "</p>";
+        label.innerHTML = "<p>Modèle : " + data.name + "</p>";
         let price = document.getElementById("price");
-        price.innerHTML = "<p>" + response.price +"€</p>";
+        price.innerHTML = "<p>" + data.price +"€</p>";
         let description = document.getElementById("description");
-        description.innerHTML = "<p>" + response.description + "</p>";
+        description.innerHTML = "<p>" + data.description + "</p>";
         let custom = document.getElementById("custom");
-        let options = response.lenses;
+        let options = data.lenses;
         for(let i = 0; i < options.length; i++)
         {
             custom.innerHTML += "<option>" + options[i] +"</option>";
         }
         console.log("Infos produit insérées");
-    }
-};
-requestProduct.open("GET", "http://localhost:3000/api/cameras/" + selectedId);
-requestProduct.send();
+    })
+.catch(error => console.log("Erreur détectée : " + error));
+});
 
 // ajouter un produit au panier avec localStorage
 function addProduct()
