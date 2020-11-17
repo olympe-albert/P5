@@ -1,4 +1,4 @@
-// récupérer l'id du produit sélectionné
+// récupérer l'id du produit sélectionné à partir de l'url
 function getId()
 {
     let finder = window.location.search;
@@ -37,21 +37,24 @@ function addProduct()
 {
     let product = selectedId;
     let cartContent = [];
+    // si panier JSON initial vide -> tableau cartContent vide
     if(JSON.parse(localStorage.getItem("cartContent")) === null)
     {
         cartContent = [];
         console.log("cartContent initial vide");
     }
+    // si panier JSON initial rempli -> tableau cartContent avec ids produits
     else
     {
         cartContent = JSON.parse(localStorage.getItem("cartContent"));
         console.log("cartContent initial : " + cartContent);
     };
     cartContent.push(product);
-    localStorage.setItem("cartContent", JSON.stringify(cartContent));
+    localStorage.setItem("cartContent", JSON.stringify(cartContent)); // tableau cartContent stocké en JSON dans localStorage
     console.log("cartContent JSON stocké en localStorage : " + JSON.stringify(cartContent));
 };
 
+// événement ajout de produit au clic 
 let addToCart = document.getElementById("addtocart");
 addToCart.addEventListener("click", function(x)
 {
@@ -61,6 +64,6 @@ addToCart.addEventListener("click", function(x)
     x.stopPropagation();
 });
 
-let cartContent = localStorage.getItem("cartContent");
-console.log("Nouveau cartContent : " + cartContent);
+// let cartContent = localStorage.getItem("cartContent");
+// console.log("Nouveau cartContent : " + cartContent);
 

@@ -1,9 +1,10 @@
 // page d'accueil
-// récupération des données produits JSON
 
+// récupération des données produits JSON
 fetch ("http://localhost:3000/api/cameras")
 .then(response => {
     response.json().then(data => {
+// création des éléments html à partir du tableau récupéré
         for (let index = 0; index < data.length; index++) 
         {
             const productBlock = document.createElement("div");

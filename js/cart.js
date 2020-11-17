@@ -5,7 +5,7 @@ let cartContent = localStorage.getItem("cartContent");
 let productPrices = [];
 let cartPrice = [];
 
-// si panier vide
+// action si panier vide
 function emptyCart()
 {
     if(cartContent === null)
@@ -21,10 +21,9 @@ function emptyCart()
 };
 
 
-// fonction GET
+// requête GET à l'API si produits sélectionnés
 function getCart()
-{   // si produits sélectionnés
-    if(!emptyCart())
+{if(!emptyCart())
     {
         const ids = JSON.parse(cartContent); // parse le contenu du localStorage
         for (let i = 0; i < ids.length; i++)
@@ -33,17 +32,20 @@ function getCart()
             .then(response => {
                 response.json().then(ids => {
                     console.log("Requête ok");
-                    showCart(ids);
+                    showCart(ids); // appel de l'affichage du panier
                 });
+            })
+            .catch(error => {
+                console.log("Erreur lors de la requête : " + error);
             });
         }
     }
 }
 
-// affiche le panier
+// fonction d'affichage du panier
 function showCart(ids)
 {
-    // affiche les produits et leur prix
+// affiche les produits et leur prix
     let productLabel = document.createElement("p");
     let cart = document.getElementById("cart");
     cart.appendChild(productLabel);
@@ -51,7 +53,7 @@ function showCart(ids)
     let productPrice = document.createElement("p");
     cart.appendChild(productPrice);
     productPrice.innerHTML = ids.price + "€";
-    // calcule les totaux intermédiaires du panier
+// calcule les totaux intermédiaires du panier (voir suite setTimeout)
     productPrices.push(ids.price);
     let sumOfPrices = productPrices.reduce(function(x, y)
     {
@@ -99,11 +101,6 @@ let address = document.getElementById("address");
 let city = document.getElementById("city");
 let mail = document.getElementById("mail");
 
-// création du tableau de produits
-let products = [];
-let ids = JSON.parse(cartContent);
-products.push(ids);
-
 // fonction de validation du formulaire
 function validateForm()
 {
@@ -133,7 +130,7 @@ function validateForm()
     }
 };
 
-// fonction de création de contact
+// fonction de création de l'objet contact pour POST
 function createContact()
 {
     let contact = {
@@ -145,6 +142,11 @@ function createContact()
     };
     return contact;
 }
+
+// création du tableau de produits pour POST
+let products = [];
+let ids = JSON.parse(cartContent);
+products.push(ids);
 
 // fonction POST products et contact à l'API
 function sendAndReceiveData(contact, products)
@@ -164,7 +166,7 @@ function sendAndReceiveData(contact, products)
             localStorage.setItem("orderId", backData.orderId);
             });
     fetchPostPromise.catch(error => {
-        console.log("Erreur détectée : " + error);
+        console.log("Erreur lors de POST : " + error);
     });
 };
 
