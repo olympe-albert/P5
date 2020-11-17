@@ -163,6 +163,9 @@ function sendAndReceiveData(contact, products)
             console.log("Numéro de commande :" + backData.orderId);
             localStorage.setItem("orderId", backData.orderId);
             });
+    fetchPostPromise.catch(error => {
+        console.log("Erreur détectée : " + error);
+    });
 };
 
 // au clic sur le bouton d'envoi...
