@@ -6,6 +6,7 @@ function getId()
     return id;
 };
 const selectedId = getId();
+console.log("Id produit récupéré : " + selectedId);
 
 // ajouter le produit sélectionné au html
 let requestProduct = new XMLHttpRequest();
@@ -13,6 +14,7 @@ requestProduct.onreadystatechange = function()
     {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
     {
+        console.log("Requête infos produit ok");
         let response = JSON.parse(this.responseText);
         let image = document.getElementById("image");
         image.innerHTML = "<img src=" + response.imageUrl + ">";
@@ -28,7 +30,7 @@ requestProduct.onreadystatechange = function()
         {
             custom.innerHTML += "<option>" + options[i] +"</option>";
         }
-        
+        console.log("Infos produit insérées");
     }
 };
 requestProduct.open("GET", "http://localhost:3000/api/cameras/" + selectedId);
@@ -42,13 +44,16 @@ function addProduct()
     if(JSON.parse(localStorage.getItem("cartContent")) === null)
     {
         cartContent = [];
+        console.log("cartContent initial vide");
     }
     else
     {
         cartContent = JSON.parse(localStorage.getItem("cartContent"));
+        console.log("cartContent initial : " + cartContent);
     };
     cartContent.push(product);
     localStorage.setItem("cartContent", JSON.stringify(cartContent));
+    console.log("cartContent JSON stocké en localStorage : " + JSON.stringify(cartContent));
 };
 
 let addToCart = document.getElementById("addtocart");
@@ -61,5 +66,5 @@ addToCart.addEventListener("click", function(x)
 });
 
 let cartContent = localStorage.getItem("cartContent");
-console.log(cartContent);
+console.log("Nouveau cartContent : " + cartContent);
 

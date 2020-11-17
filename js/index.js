@@ -5,8 +5,8 @@ let request1 = new XMLHttpRequest();
 request1.onreadystatechange = function() 
     {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) 
-    console.log("Requête GET ok");
     {
+        console.log("Requête GET ok");
         let response = JSON.parse(this.responseText);
         console.log("Réponse JSON récupérée vers JS : " + response);
 
