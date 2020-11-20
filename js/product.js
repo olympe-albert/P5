@@ -18,7 +18,7 @@ fetch("http://localhost:3000/api/cameras/" + selectedId)
         let label = document.getElementById("label");
         label.innerHTML = "<p>Modèle : " + data.name + "</p>";
         let price = document.getElementById("price");
-        price.innerHTML = "<p>" + data.price +"€</p>";
+        price.innerHTML = "<p>" + data.price/100 +"€</p>";
         let description = document.getElementById("description");
         description.innerHTML = "<p>" + data.description + "</p>";
         let custom = document.getElementById("custom");

@@ -52,9 +52,9 @@ function showCart(ids)
     productLabel.innerHTML = ids.name;
     let productPrice = document.createElement("p");
     cart.appendChild(productPrice);
-    productPrice.innerHTML = ids.price + "€";
+    productPrice.innerHTML = ids.price/100 + "€";
 // calcule les totaux intermédiaires du panier (voir suite setTimeout)
-    productPrices.push(ids.price);
+    productPrices.push(ids.price/100);
     let sumOfPrices = productPrices.reduce(function(x, y)
     {
         return x + y;

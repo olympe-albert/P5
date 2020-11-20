@@ -24,7 +24,7 @@ fetch ("http://localhost:3000/api/cameras")
             const priceCamera = document.createElement("p");
             productBlock.appendChild(priceCamera);
             priceCamera.className = "product-label";
-            priceCamera.innerHTML = data[index].price + "€";
+            priceCamera.innerHTML = data[index].price/100 + "€";
             const descriptionCamera = document.createElement("p");
             productBlock.appendChild(descriptionCamera);
             descriptionCamera.className = "product-label";
