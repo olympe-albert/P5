@@ -61,7 +61,6 @@ let addToCart = document.getElementById("addtocart");
 addToCart.addEventListener("click", function(x)
 {
     addProduct();
-    alert("produit ajouté au panier");
     x.preventDefault();
     x.stopPropagation();
 });
