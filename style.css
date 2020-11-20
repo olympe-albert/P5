@@ -182,6 +182,27 @@ h3
     left: 62px;
 }
 
+.btn-continue
+{
+    width: 220px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: blueviolet;
+    position: relative;
+}
+
+.btn-continue a
+{
+    text-align: center;
+    font-family: "NewYork";
+    font-size: 1.4em;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    left: 55px;
+    top: 10px;
+}
+
 /** footer **/
 footer
 {
