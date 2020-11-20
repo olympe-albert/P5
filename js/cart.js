@@ -77,10 +77,10 @@ setTimeout (function()
     let lastPrice = arrayAllPrices[arrayAllPrices.length - 1].innerHTML;
     console.log("Valeur dernier total intermédiaire enregistrée : " + lastPrice);
     allPrices.forEach(e => e.parentNode.removeChild(e))
-    let totalPrice = document.createElement("p");
+    let finalPrice = document.createElement("p");
     let cart = document.getElementById("cart");
-    cart.appendChild(totalPrice);
-    totalPrice.innerHTML = "Prix total : " + lastPrice + "€";
+    cart.appendChild(finalPrice);
+    finalPrice.innerHTML = "Prix total : " + lastPrice + "€";
     console.log("Affichage du total du panier");
 // stockage du montant de la commande
     localStorage.setItem("orderAmount", lastPrice);
