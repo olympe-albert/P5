@@ -32,5 +32,8 @@ fetch ("http://localhost:3000/api/cameras")
             console.log("Blocs produit créés");
         }
     })
-.catch(error => console.log("Erreur détectée : " + error));
-});
+})
+.catch(error => {
+    console.log("Erreur détectée : " + error)
+    }
+);

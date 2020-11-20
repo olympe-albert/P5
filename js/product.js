@@ -29,7 +29,9 @@ fetch("http://localhost:3000/api/cameras/" + selectedId)
         }
         console.log("Infos produit insérées");
     })
-.catch(error => console.log("Erreur détectée : " + error));
+})
+.catch(error => {
+    console.log("Erreur détectée : " + error);
 });
 
 // ajouter un produit au panier avec localStorage
