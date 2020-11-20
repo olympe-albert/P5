@@ -85,7 +85,7 @@ setTimeout (function()
 // stockage du montant de la commande
     localStorage.setItem("orderAmount", lastPrice);
     console.log("Montant commande stocké : " + lastPrice);
-}, 100);
+}, 300);
 
 // formulaire de contact
 
