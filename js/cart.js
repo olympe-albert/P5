@@ -74,17 +74,25 @@ setTimeout (function()
 {
     let allPrices = document.querySelectorAll(".totalprice");
     let arrayAllPrices = Array.from(allPrices);
-    let lastPrice = arrayAllPrices[arrayAllPrices.length - 1].innerHTML;
-    console.log("Valeur dernier total intermédiaire enregistrée : " + lastPrice);
-    allPrices.forEach(e => e.parentNode.removeChild(e))
-    let finalPrice = document.createElement("p");
-    let cart = document.getElementById("cart");
-    cart.appendChild(finalPrice);
-    finalPrice.innerHTML = "Prix total : " + lastPrice + "€";
-    console.log("Affichage du total du panier");
-// stockage du montant de la commande
-    localStorage.setItem("orderAmount", lastPrice);
-    console.log("Montant commande stocké : " + lastPrice);
+    if(arrayAllPrices[arrayAllPrices.length - 1] == null)
+    {
+        console.log("Pas de total à traiter")
+    }
+    else
+    {
+        let lastPrice = arrayAllPrices[arrayAllPrices.length - 1].innerHTML;
+        console.log("Valeur dernier total intermédiaire enregistrée : " + lastPrice);
+        allPrices.forEach(e => e.parentNode.removeChild(e))
+        let finalPrice = document.createElement("p");
+        let cart = document.getElementById("cart");
+        cart.appendChild(finalPrice);
+        finalPrice.innerHTML = "Prix total : " + lastPrice + "€";
+        console.log("Affichage du total du panier");
+    // stockage du montant de la commande
+        localStorage.setItem("orderAmount", lastPrice);
+        console.log("Montant commande stocké : " + lastPrice);
+    };
+    
 }, 300);
 
 // formulaire de contact
