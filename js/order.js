@@ -9,3 +9,6 @@ let orderInfos = document.getElementById("order");
 let orderConfirmation = document.createElement("p");
 orderInfos.appendChild(orderConfirmation);
 orderConfirmation.innerHTML = "Votre commande numéro " + orderId + " d'un montant de " + orderAmount + "€ est bien enregistrée." ;
+
+// vider le panier
+window.localStorage.clear();
