@@ -20,6 +20,27 @@ function emptyCart()
     return false;
 };
 
+// option vider le panier
+function clearCart()
+{
+    let productsInfos = document.querySelectorAll("#cart p");
+    productsInfos.forEach(e => e.parentNode.removeChild(e));
+};
+
+let clearCartInput = document.getElementById("clearcart");
+clearCartInput.addEventListener("click", function(e)
+{
+    window.localStorage.clear();
+    e.preventDefault();
+    e.stopPropagation();
+    clearCart();
+    let emptyCart = document.createElement("p");
+    let cart = document.getElementById("cart");
+    cart.appendChild(emptyCart);
+    emptyCart.innerHTML = "Votre panier est vide";
+    console.log("Panier vidé");
+});
+
 
 // requête GET à l'API si produits sélectionnés
 function getCart()

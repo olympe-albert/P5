@@ -142,6 +142,27 @@ p
     background-color: white;
 }
 
+.btn-clear
+{
+    width: 140px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: blueviolet;
+    position: relative;
+}
+
+.btn-clear p
+{
+    text-align: center;
+    font-family: "NewYork";
+    font-size: 1.4em;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    left: 40px;
+    top: -10px;
+}
+
 /** aside **/
 aside
 {
